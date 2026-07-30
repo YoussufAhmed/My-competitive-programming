@@ -1,4 +1,4 @@
-// Problem link: https://codeforces.com/problemset/problem/2229/A
+// problem link: https://codeforces.com/contest/2227/problem/B
 
 //#include <bits/stdc++.h>
 #include <iostream>
@@ -27,23 +27,15 @@ long long ceil_div1(long long a, long long b) {
 void solve(void){
     int t; cin >> t;
     while(t--){
-        int n; cin >> n;
-        int arr[n];
-        int mx, mn;
-        for(int i=0; i<n; i++){
-            cin >> arr[i];
-            if(!i){
-                mx=arr[i];
-                mn=arr[i];
-            }
+       int n; cin >> n;
+       string s1 = "", s2="";
+       for(int i=0; i<n; i++){
+        char c; cin >> c;
+        if(c == ')') s1.push_back(c);
+        else s2.push_back(c);
+       }
 
-            if(arr[i]>mx) mx=arr[i];
-            else if(arr[i]<mn) mn=arr[i];
-        }
-
-        int mn_mx = mx - mn;
-        int res = ceil_div(mn_mx, 2);
-        cout << res << endl;
+       s1.size() == s2.size() ? cout << "YES\n" : cout << "NO\n";
     }
 }
 
